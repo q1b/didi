@@ -1,27 +1,37 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment,} from 'react'
-import { PaperClipIcon as PaperClipSolidIcon, UserCircleIcon as SolidUserCircleIcon, PencilAltIcon as PencilAltSolidIcon, PaperAirplaneIcon as PaperAirplaneSolidIcon } from '@heroicons/react/solid';
-import {PaperClipIcon as PaperClipOutlineIcon , UserCircleIcon as OutlineUserCircleIcon, PencilAltIcon as OutlinePencilAltIcon, PaperAirplaneIcon as PaperAirplaneOutlineIcon } from '@heroicons/react/outline';
+import {HomeIcon as HomeSolidIcon ,SunIcon as SunSolidIcon, PaperClipIcon as PaperClipSolidIcon, UserCircleIcon as SolidUserCircleIcon, PaperAirplaneIcon as PaperAirplaneSolidIcon } from '@heroicons/react/solid';
+import {HomeIcon as HomeOutlineIcon,SunIcon as SunOutlineIcon , PaperClipIcon as PaperClipOutlineIcon , UserCircleIcon as OutlineUserCircleIcon, PaperAirplaneIcon as PaperAirplaneOutlineIcon } from '@heroicons/react/outline';
 
 export default function Example() {
   let items = [
-     {
-        name: 'Portfolio',
-        activeIcon:SolidUserCircleIcon,
-        inactiveIcon:OutlineUserCircleIcon,
+    {
+      name: 'Home',
+      link:'/',
+      activeIcon:HomeSolidIcon,
+      inactiveIcon:HomeOutlineIcon,
+   }, 
+    {
+        name: 'Courses',
+        link:'/Courses',
+        activeIcon:SunSolidIcon,
+        inactiveIcon:SunOutlineIcon,
      },
      {
-        name:'Blog',
+        name:'About',
+        link:'/about',
         activeIcon:PaperClipSolidIcon,
         inactiveIcon:PaperClipOutlineIcon,
      },
-     {
-        name: 'My Art',
-        activeIcon:PencilAltSolidIcon,
-        inactiveIcon:OutlinePencilAltIcon
-     },
+    //  {
+    //     name: 'Gallery',
+    //     link:'/',
+    //     activeIcon:PencilAltSolidIcon,
+    //     inactiveIcon:OutlinePencilAltIcon
+    //  },
      {
         name: 'Get in touch',
+        link:'/Connect',
         activeIcon:PaperAirplaneSolidIcon,
         inactiveIcon:PaperAirplaneOutlineIcon,
      },
@@ -81,7 +91,7 @@ export default function Example() {
                 return (
                 <Menu.Item key={index}>
                 {({ active }) => (
-                  <button
+                  <a href={item.link}
                     className={`${
                       active ? 'bg-violet-500 text-white' : 'text-white'
                     } z-50 tab-hightlight-none group flex rounded-md transition-colors items-center w-full px-2 py-2 text-sm`}
@@ -98,7 +108,7 @@ export default function Example() {
                         />
                     )}
                     {item.name}
-                  </button>
+                  </a>
                 )}
               </Menu.Item>
               )})}

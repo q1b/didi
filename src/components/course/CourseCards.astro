@@ -1,15 +1,17 @@
 ---
 
-import ProjectCard from './BlogCard.astro';
+import CourseCard from './CourseCard.astro';
 
 const { allProjects } = Astro.props;
 
 ---
 {allProjects.map(p => 
-  <ProjectCard
+  <CourseCard
     title={p.title} 
     subTitle={p.subTitle}
     link={p.url}
-    noOfLines={p.lines}    
+    days={p.days}
+    hours={p.hours}
+    bg={p.bg}
   />
 )}

@@ -59,6 +59,7 @@ module.exports = {
         'zs':'400px',
         'xss':'450px',
         'xs': '500px',
+        '540':'540px',
         'mds':'870px',
       },
 			typography: (theme) => ({

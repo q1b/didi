@@ -1,13 +1,14 @@
 ---
 import Model from "../../index/Model.jsx"
+import Dropdown from "../../FUN/Dropdown.jsx"
 let items = [
   {
-    name: 'CV',
-    link:'#'
+    name: 'Courses',
+    link:'/Courses'
   },
   {
-    name:'Blog',
-    link:'/Blogs'
+    name:'Contacts',
+    link:'/Connect'
    },
   {
     name: 'Twitter',
@@ -31,11 +32,12 @@ let items = [
           <h1
               class="text-xl font-semibold text-transparent select-none font-round bg-gradient-to-br from-lightBlue-500 to-indigo-400 bg-clip-text"
           >
-              Divyamrit
+              Shreya Chugh
           </h1>
       </div>
   </a>
-    <nav class="flex place-content-around xs:w-72">
+    <Dropdown client:visible/>
+    <nav class="place-content-around xs:w-72 hidden sm:flex">
       {items.map((item)=>{
             switch(item.name) {
               case 'CV':

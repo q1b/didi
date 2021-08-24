@@ -1,0 +1,64 @@
+---
+const datas = [
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/09/FB_IMG_1594468191734.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/09/FB_IMG_1594468206027.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/09/FB_IMG_1594467933543.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/09/FB_IMG_1594468152496-1.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/09/FB_IMG_1594468211601.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/11/yes-18.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/11/yes2-1.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+  {
+    image:"https://www.shreyachugh.in/wp-content/uploads/2020/11/yes-13.jpg",
+    color:'#6D29CD77, #8F23CB',
+  },
+]
+---
+
+<div class="p-4 grid gap-4 w-full max-w-3xl mt-24 sm:grid-cols-2 md:grid-cols-4">
+  <h1 class="text-4xl font-extrabold text-white md:text-5xl font-jetMono 
+              grid gap-8
+              col-span-2 grid-cols-2
+              md:col-span-3 md:grid-cols-3
+              ">
+    <span class="col-span-2 md:col-span-3">Sneak peaks</span>
+  </h1>
+  <p class="self-center md:row-start-2 md:col-start-1 md:col-span-2 md:pr-12 md:text-lg text-white">Movements of happiness, and bliss .</p>
+  {datas.map((data,index)=>{
+      if(index===3){
+        return <div class="h-16 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg sm:h-auto sm:reactangle md:square md:col-start-2" style={`
+          background:linear-gradient(135deg,${data.color}),url(${data.image});
+          background-repeat: no-repeat;
+          background-size: cover;`}>
+        </div>
+      } else {
+        return <div class="h-16 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-lg sm:h-auto sm:reactangle md:square" style={`
+          background:linear-gradient(135deg,${data.color}),url(${data.image});
+          background-repeat: no-repeat;
+          background-size: cover;`}>
+        </div>
+      }
+  })}
+
+  <p class="text-purple-500 text-lg">Childrens are bliss with laughter and happiness</p>
+</div>

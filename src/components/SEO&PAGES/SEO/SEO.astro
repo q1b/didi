@@ -1,11 +1,11 @@
 ---
 const { canonicalURL } = Astro.props;
-const formattedContentTitle = ' Divyamrit Web designer Portfolio ';
+const formattedContentTitle = ' Shreya chugh international Art of living teacher ';
+const description = "A meditation, spiritual awareness website for teens and kids of less than 18 years age,"
 const imageSrc = '/assets/OgImage.jpg?v=1';
 // const imageSrc = '/pic.jpeg?v=1';
-
 const canonicalImageSrc = new URL(imageSrc, Astro.site);;
-const imageAlt = 'Divyamrit Img';
+const imageAlt = 'Shreya didi Img';
 ---
 
 <!-- Goggle analytics -->
@@ -21,13 +21,13 @@ const imageAlt = 'Divyamrit Img';
 <meta property="og:locale" content='en_US'/>
 <meta property="og:image" content={canonicalImageSrc}/>
 <meta property="og:image:alt" content={imageAlt}/>
-<meta property="og:description" content='Fine detailed crafted portfolio website, to showcase my work .'/>
+<meta property="og:description" content={description}/>
 <meta property="og:site_name" content={formattedContentTitle}/>
 
 <!-- Twitter Tags -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content='XSukhpreet'/>
 <meta name="twitter:title" content={formattedContentTitle}/>
-<meta name="twitter:description" content='Fine detailed crafted portfolio website, to showcase my work .'/>
+<meta name="twitter:description" content={description}/>
 <meta name="twitter:image" content={canonicalImageSrc}/>
 <meta name="twitter:image:alt" content={imageAlt}/>

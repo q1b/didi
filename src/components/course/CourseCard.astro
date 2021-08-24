@@ -1,0 +1,9 @@
+---
+const { title = 'Card Title', language = 'web native api', days=3, hours = 2 , subTitle = "Card Sub Title" , link = "#" , bg = "blue" } = Astro.props;
+---
+<div id="BlogCard" class={`flex flex-col w-64 bg-blueGray-900 ${ bg === 'blue' ? 'hover:bg-lightBlue-600' : ( bg === 'rose' ? 'hover:bg-rose-600' : 'hover:bg-indigo-600' ) } justify-end rounded-lg p-5 transition-colors duration-500`} style={`text-shadow: 1px 1px 2px ${bg === 'blue' ? '#0F766E' : ( bg === 'rose' ? '#991B1B' : '#6B21A8' )} ;`}>
+  <h1 class="text-white text-xl">{title}</h1>
+  <p class="text-white pt-3 text-base">{days}days</p>
+  <p id="BlogCardText" class="text-white max-h-0 opacity-0 text-base">{subTitle}<br></p>
+  <a id="BlogCardButton" href={link} class="max-h-0 opacity-0 w-max border-2 px-3 text-sm inline-block rounded-lg bg-blueGray-900 text-white">Read More!</a>
+</div>

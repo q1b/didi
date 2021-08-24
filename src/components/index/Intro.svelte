@@ -2,14 +2,16 @@
 import { onMount } from 'svelte';
 import { annotate,annotationGroup } from 'rough-notation';
 
-let ele1;
+let h1;
 // Element of my Name
-let ele2;
-// Programming
-let o1;
-let o2;
-let o3;
-let o4;
+let p1;
+// Paragraph 2
+let p2_1;
+let p2_2;
+let p2_3;
+let p2_4;
+// Paragraph 3
+let p3;
 // connet !
 let c1;
 let buttonConnect;
@@ -26,14 +28,15 @@ function generateAnnotationObject(type,color,iterations=1){
 }
 onMount(()=>{
   // a for annotation
-  const a1 = annotate( ele1, generateAnnotationObject('underline','#8033FF'));
-  const a2 = annotate( ele2, generateAnnotationObject('highlight','#51B2FD33' ));
-  const Eh1 = annotate(o1, generateAnnotationObject('highlight','#FE135A44',1));
-  const Eh2 = annotate(o2, generateAnnotationObject('highlight','#FF2E1344',1));
-  const Eh3 = annotate(o3, generateAnnotationObject('highlight','#FF6D1344',1));
-  const Eh4 = annotate(o4, generateAnnotationObject('highlight','#FFB01344',1));
+  const a1 = annotate( h1, generateAnnotationObject('underline','#8033FF'));
+  const a2 = annotate( p1, generateAnnotationObject('highlight','#51B2FD33' ));
+  const Ep2_1 = annotate(p2_1, generateAnnotationObject('highlight','#FE135A44',1));
+  const Ep2_2 = annotate(p2_2, generateAnnotationObject('highlight','#FF2E1344',1));
+  const Ep2_3 = annotate(p2_3, generateAnnotationObject('highlight','#FF6D1344',1));
+  const Ep2_4 = annotate(p2_4, generateAnnotationObject('highlight','#FFB01344',1));
+  const Ep3 = annotate(p3, generateAnnotationObject('highlight','#6DE18744',1));
   const ConnetAnnotation = annotate(c1, generateAnnotationObject('underline','#FFF',2));
-  const ag = annotationGroup([a1, a2, Eh1,Eh2,Eh3,Eh4,ConnetAnnotation]);
+  const ag = annotationGroup([a1, a2, Ep2_1,Ep2_2,Ep2_3,Ep2_4,Ep3, ConnetAnnotation]);
   ag.show();
   buttonConnect.addEventListener('click',()=>{
     ag.hide();
@@ -42,24 +45,23 @@ onMount(()=>{
 });
 </script>
 <article class="relative max-w-xl text-white text-xl selection:text-[#0099ff] selection:bg-[hsla(210,100%,50%,0.2)]">
-    <h1 class="text-4xl font-black mb-6">Hi there, I'm <span bind:this={ele1}>Sukhpreet</span>.</h1>
+    <h1 class="text-4xl font-black mb-6">Hi there, I'm <span bind:this={h1}>Shreya</span>.</h1>
     <p class="mb-3 selection:text-blue-500 selection:bg-blue-500/10">
-      I am a lover of new stuff in tech world that is comming everyday
-      and slowly becoming part of this vast <span bind:this={ele2}>programming</span> world.
+      My passion is to connect teens to there core of happiness, helping them to becoming better themselves,
+      through, bringing ancient <span bind:this={p1}>wisdom</span> and tommorows practicality in them .
     </p> 
     <p class="mb-3 selection:text-indigo-500 selection:bg-indigo-500/10">
-      With learning by each passing day in my life,I also love
-      to play <span bind:this={o1}>basketball</span>, <span bind:this={o2}>Brawl&nbsp;Star</span>,<span bind:this={o3}>Coding</span> and <span bind:this={o4}>meditation</span>.
+      Besides, meditation I am also 
+      <span bind:this={p2_1}>guitarist</span>, <span bind:this={p2_2}>photographer</span>, <span bind:this={p2_3}>books&nbsp;lover</span> and <span bind:this={p2_4}>Influencer</span>.
     </p>
     <p class="mb-3 selection:text-purple-500 selection:bg-purple-500/10">
-      Take a look at stuff that I can be helpful for developer,
-      I love to make new friends and hear about the stuff they are doing,
+      Through my past experience, I can make <span bind:this={p3}>better tommorow</span> 
     </p>
-    <a href="/Connect" >
+    <a href="/about" >
       <span on:mouseenter={(e)=>{
-          annotate(e.target,{type:'underline'}).show();
+          annotate(e.target,{type: 'underline',iterations:2,color:'#94F'}).show();
         }} bind:this={c1} class="" >
-        Connect !
+        More !
       </span>
     </a>
     <button bind:this={buttonConnect} class="absolute -top-8 right-0 hover:bg-white hover:text-lightBlue-500 flex items-center justify-center w-8 h-8 focus:ring focus:ring-offset-2 rounded-xl transition-colors ease-in-out">
